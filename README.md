@@ -1,6 +1,6 @@
 # 3-Demeter Capture
 
-![3-Demeter Logo](https://github.com/thsant/3dmcap/blob/master/resources/splash-logo.png "3-Demeter Logo")
+![3-Demeter Logo](https://github.com/thsant/3dmcap/blob/master/resources/3demeter_banner.jpg "3-Demeter Logo")
 
 **Author:** [Thiago T. Santos](https://www.embrapa.br/en/web/portal/team/-/empregado/351534/thiago-teixeira-santos), [Embrapa Agricultural Informatics](https://www.embrapa.br/en/informatica-agropecuaria)
 
