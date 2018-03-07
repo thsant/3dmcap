@@ -25,11 +25,12 @@ Unicamp. [PDF](http://ainfo.cnptia.embrapa.br/digital/bitstream/item/169609/1/Au
 3-Demeter Capture is released under a [GPLv3 license](https://github.com/thsant/3dmcap/blob/master/LICENSE). This software relies in
 other open-source components as [PMVS](https://www.di.ens.fr/pmvs/), [ORB_SLAM2](https://github.com/raulmur/ORB_SLAM2), [g2o](https://github.com/RainerKuemmerle/g2o) and  [OpenCV](https://opencv.org/).
 
-For a closed-source version of ORB-SLAM2 for commercial purposes, please contact the Embrapa Agricultural Informatics
+If you need 3-Demeter Capture for commercial purposes, please contact the Embrapa Agricultural Informatics
 [Technology Transfer Office](https://www.embrapa.br/en/informatica-agropecuaria/transferencia-de-tecnologia).
 
 If you use 3-Demeter Capture in an academic work, please cite:
 
+```
 @inproceedings{Santos2017,
 	address = {Campinas},
 	author = {Santos, Thiago Teixeira and Bassoi, Luis Henrique and Oldoni, Henrique and Martins, Roberto Luvisutto},
@@ -41,6 +42,7 @@ If you use 3-Demeter Capture in an academic work, please cite:
 	publisher = {Unicamp},	
 	year = {2017}
 }
+```
 
 # Running using Docker
 
@@ -51,17 +53,22 @@ have Docker running in a Ubuntu Linux host and a camera connected as `/dev/video
 docker run -it --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/video0 -v $HOME/.3dmcap:/home/demeter/.3dmcap -v $HOME/workdir:/home/demeter/workdir thsant/3dmcap capture.py
 ```
 
-Note the command below assumes you have, in your home directory, a directory `.3dmcap`, containing the configuration file, and a `workdir` directory for saving the results produced by
+Note the command above assumes you have, in your home directory, a directory `.3dmcap`, containing the configuration file, and a `workdir` directory for saving the results produced by
 the application in the Docker container.
 
 If you have problems loading the graphical interface, try to execute
 
 ```
-xhost local:root
+xhost +local:root
 ```
 
-before the docker run.
+before the docker run. After the execution, run
 
+```
+xhost -local:root
+```
+
+to return the access controls.
 
 # Dependencies
 
@@ -95,13 +102,13 @@ assume `/usr/local` as the install directory.
 INSTALL_PREFIX=/usr/local
 ```
 
-Adding Eigen (needed by OpenCV and g2o), build-essential and cmake:
+Add Eigen (needed by OpenCV and g2o), build-essential and cmake:
 
 ```
 apt-get install -y build-essential libeigen3-dev cmake
 ```
 
-Adding OpenCV 3.4 dependencies:
+Add OpenCV 3.4 dependencies:
 
 ```
 apt-get install -y git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev 
@@ -158,6 +165,7 @@ cp Vocabulary/ORBvoc.txt /usr/local/share/3dmcap/
 
 Install PMVS. We recommend [pmoulon's version at GitHub](https://github.com/pmoulon/CMVS-PMVS.git):
 
+```
 cd /usr/local/src 
 git clone https://github.com/pmoulon/CMVS-PMVS.git 
 cd CMVS-PMVS/program 
