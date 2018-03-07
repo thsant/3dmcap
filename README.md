@@ -70,6 +70,18 @@ xhost -local:root
 
 to return the access controls.
 
+## Errors regarding NVIDIA drivers and OpenGL
+
+If you are facing crashes presenting the following error message:
+
+```
+libGL error: No matching fbConfigs or visuals found
+libGL error: failed to load driver: swrast
+```
+
+then you are having issues regarding NVIDIA drivers and OpenGL from Docker. In this case, consider
+[NVIDIA Docker](https://github.com/NVIDIA/nvidia-docker) as a workaround.
+
 # Dependencies
 
 The software depends on:
