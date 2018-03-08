@@ -215,3 +215,7 @@ cp ./dmcap/camcal.py ./dmcap/capture.py /usr/local/bin
 ```
 
 Edit the **3dmcap.cfg** file and save it to your `$HOME/.3dmcap` directory. You can run **capture.py** to start 3-Demeter Capture.  
+
+## Manual
+
+For a tutorial about how to use the application, including details about configuration, see [the PDF manual](https://github.com/thsant/3dmcap/blob/master/resources/3-DemeterCapture.pdf).
