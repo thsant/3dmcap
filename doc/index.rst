@@ -6,11 +6,11 @@
 3-Demeter Capture Tutorial
 ==========================
 
-*3-Demeter Capture* is an application for the three-dimensional
+*3-Demeter Capture* is an application for three-dimensional
 reconstruction of objects from digital images. It allows an ordinary
-camera and a computer to operate as a 3-D scanner. The application
-assists the user in imaging and computing a cloud of 3-D points that
-sample the surface of objects imaged in three dimensions. Its purpose
+camera and a computer to operate as *a simple 3-D scanner*. The
+application assists the user on imaging and computing a cloud of 3-D
+points, sampling the objects surfaces in three dimensions. Its purpose
 within Embrapa is the 3-D reconstruction of plants for purposes of
 automatic measurement in phenotyping and precision agriculture. 
 
@@ -39,7 +39,11 @@ __ https://cloud.docker.com/swarm/thsant/repository/docker/thsant/3dmcap/general
 
 ::
 
-   $ docker run -it --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/video0 -v $HOME/.3dmcap:/home/demeter/.3dmcap -v $HOME/workdir:/home/demeter/workdir thsant/3dmcap capture.py
+   $ docker run -it --rm -e DISPLAY=$DISPLAY \
+   -v /tmp/.X11-unix:/tmp/.X11-unix \
+   --device /dev/video0 \
+   -v $HOME/.3dmcap:/home/demeter/.3dmcap -v $HOME/workdir:/home/demeter/workdir \
+   thsant/3dmcap capture.py
 
 
 Note the command above assumes you have, in your home directory, a directory ``.3dmcap``, containing the configuration file, and a
@@ -124,8 +128,10 @@ Add OpenCV 3.4 dependencies:
 
 ::
 
-    apt-get install -y git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev 
-    apt-get install -y python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
+    apt-get install -y git libgtk2.0-dev pkg-config libavcodec-dev \
+    libavformat-dev libswscale-dev 
+    apt-get install -y python-dev python-numpy libtbb2 libtbb-dev \
+    libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
 
 Get the `OpenCV 3.4.1 sources <https://opencv.org/releases.html>`__ and
 extract the files to ``/usr/local/src``. Then build OpenCV:
@@ -258,7 +264,11 @@ or, if you are using the Docker container:
 
 ::
 
-   $ docker run -it --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/video1 -v /tmp:/home/demeter/workdir:rw -v /home/thiago/.3dmcap:/home/demeter/.3dmcap thsant/3dmcap camcal.py --device /dev/video1 --fwidth 1920 --fheight 1080
+   $ docker run -it --rm -e DISPLAY=$DISPLAY \
+   -v /tmp/.X11-unix:/tmp/.X11-unix \
+   --device /dev/video1 -v /tmp:/home/demeter/workdir:rw \
+   -v /home/thiago/.3dmcap:/home/demeter/.3dmcap \
+   thsant/3dmcap camcal.py --device /dev/video1 --fwidth 1920 --fheight 1080
 
 You should print the *chessboard pattern*  available in the `resources directory` and use the application to capture images of it from multiples views, as seen in the figure below.
    
