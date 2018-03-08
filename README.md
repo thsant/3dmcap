@@ -4,13 +4,14 @@
 
 **Author:** [Thiago T. Santos](https://www.embrapa.br/en/web/portal/team/-/empregado/351534/thiago-teixeira-santos), [Embrapa Agricultural Informatics](https://www.embrapa.br/en/informatica-agropecuaria)
 
-**3-Demeter Capture** is an application for the three-dimensional
-reconstruction of objects from digital images. It allows an ordinary
-camera and a computer to operate as **a 3-D scanner**. The application
-assists the user in imaging and computing a cloud of 3-D points that
-sample the surface of objects imaged in three dimensions. Its purpose
-within Embrapa is the 3-D reconstruction of plants for purposes of
-automatic measurement in phenotyping and precision agriculture. 
+**3-Demeter Capture** is an application for three-dimensional
+  reconstruction of objects from digital images. It allows an ordinary
+  camera and a computer to operate as **a simple 3-D scanner**. The
+  application assists the user on imaging and computing a cloud of
+  3-D points, sampling the objects surfaces in three dimensions. Its
+  purpose within Embrapa is the 3-D reconstruction of plants for
+  purposes of automatic measurement in phenotyping and precision
+  agriculture.  
 
 ## Related Publications
 
@@ -24,10 +25,10 @@ Unicamp. [PDF](http://ainfo.cnptia.embrapa.br/digital/bitstream/item/169609/1/Au
 
 ## License
 
-3-Demeter Capture is released under a [GPLv3 license](https://github.com/thsant/3dmcap/blob/master/LICENSE). This software relies in
+3-Demeter Capture is released under a [GPLv3 license](https://github.com/thsant/3dmcap/blob/master/LICENSE). This software relies on
 other open-source components as [PMVS](https://www.di.ens.fr/pmvs/), [ORB_SLAM2](https://github.com/raulmur/ORB_SLAM2), [g2o](https://github.com/RainerKuemmerle/g2o) and  [OpenCV](https://opencv.org/).
 
-If you need 3-Demeter Capture for commercial purposes, please contact the Embrapa Agricultural Informatics
+If you need 3-Demeter Capture for commercial purposes, please contact Embrapa Agricultural Informatics
 [Technology Transfer Office](https://www.embrapa.br/en/informatica-agropecuaria/transferencia-de-tecnologia).
 
 If you use 3-Demeter Capture in an academic work, please cite:
@@ -55,8 +56,8 @@ have Docker running in a Ubuntu Linux host and a camera connected as `/dev/video
 docker run -it --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/video0 -v $HOME/.3dmcap:/home/demeter/.3dmcap -v $HOME/workdir:/home/demeter/workdir thsant/3dmcap capture.py
 ```
 
-Note the command above assumes you have, in your home directory, a directory `.3dmcap`, containing the configuration file, and a `workdir` directory for saving the results produced by
-the application in the Docker container.
+Note the command above assumes you have, in your home directory, a `.3dmcap` directory, containing the configuration file, and a `workdir` directory for saving the results produced by
+the application running in the Docker container.
 
 If you have problems loading the graphical interface, try to execute
 
@@ -109,7 +110,7 @@ The Python components depends on:
 
 ## Building 3-Demeter Capture
 
-For users that prefer build the entire system in their own hosts, this is the detailed building process. We
+For users that prefer build the entire system in their own hosts, this section describes the detailed building process. We
 assume `/usr/local` as the install directory.
 
 ```
@@ -193,7 +194,7 @@ make install
 Add other 3-Demeter dependencies:
 
 ```
-apt-get install -y python-wxgtk3.0 python-vtk v4l-utils 
+apt-get install -y python-wxgtk3.0 python-vtk python-tk v4l-utils 
 ```
 
 Finally, get 3-Demeter Capture code:
