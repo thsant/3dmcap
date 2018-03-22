@@ -1,6 +1,6 @@
 # 3dmcap
 
-![3-Demeter Logo](https://github.com/thsant/3dmcap/blob/master/resources/3demeter_banner.jpg "3-Demeter Logo")
+![3-Demeter Logo](https://github.com/thsant/3dmcap/blob/master/resources/3dmcap_banner.jpg "3dmcapr Logo")
 
 **Author:** [Thiago T. Santos](https://www.embrapa.br/en/web/portal/team/-/empregado/351534/thiago-teixeira-santos), [Embrapa Agricultural Informatics](https://www.embrapa.br/en/informatica-agropecuaria)
 
@@ -219,4 +219,4 @@ Edit the **3dmcap.cfg** file and save it to your `$HOME/.3dmcap` directory. You 
 
 ## Manual
 
-For a tutorial about how to use the application, including details about configuration, see [the PDF manual](https://github.com/thsant/3dmcap/blob/master/resources/3-DemeterCapture.pdf).
+For a tutorial about how to use the application, including details about configuration, see [the PDF manual](https://github.com/thsant/3dmcap/blob/master/resources/3dmcap.pdf).
