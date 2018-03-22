@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# 3-Demeter Capture documentation build configuration file, created by
+# 3dmcap documentation build configuration file, created by
 # sphinx-quickstart on Wed Mar  7 14:18:17 2018.
 #
 # This file is execfile()d with the current directory set to its
@@ -48,7 +48,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'3-Demeter Capture'
+project = u'3dmcap'
 copyright = u'2018, Thiago Santos <thiago.santos@embrapa.br>'
 author = u'Thiago Santos <thiago.santos@embrapa.br>'
 
@@ -123,7 +123,7 @@ html_theme = 'alabaster'
 
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
-#html_title = u'3-Demeter Capture v1.0'
+#html_title = u'3dmcap v1.0'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
@@ -227,7 +227,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, '3-DemeterCapture.tex', u'3-Demeter Capture Documentation',
+    (master_doc, '3-DemeterCapture.tex', u'3dmcap Documentation',
      u'Thiago Santos \\textless{}thiago.santos@embrapa.br\\textgreater{}', 'manual'),
 ]
 
@@ -257,7 +257,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, '3-demetercapture', u'3-Demeter Capture Documentation',
+    (master_doc, '3-demetercapture', u'3dmcap Documentation',
      [author], 1)
 ]
 
@@ -271,7 +271,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, '3-DemeterCapture', u'3-Demeter Capture Documentation',
+    (master_doc, '3-DemeterCapture', u'3dmcap Documentation',
      author, '3-DemeterCapture', 'One line description of project.',
      'Miscellaneous'),
 ]

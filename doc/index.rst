@@ -1,12 +1,12 @@
-.. 3-Demeter Capture documentation master file, created by
+.. 3dmcap documentation master file, created by
    sphinx-quickstart on Wed Mar  7 14:18:17 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-3-Demeter Capture Tutorial
+3dmcap Tutorial
 ==========================
 
-*3-Demeter Capture* is an application for three-dimensional
+*3dmcap* is an application for three-dimensional
 reconstruction of objects from digital images. It allows an ordinary
 camera and a computer to operate as *a simple 3-D scanner*. The
 application assists the user on imaging and computing a cloud of 3-D
@@ -31,9 +31,9 @@ Installation
 Running using Docker
 ~~~~~~~~~~~~~~~~~~~~
 
-The easiest way to install and run 3-Demeter Capture is using our *Docker image*, `thsant/3dmcap`__. If you
+The easiest way to install and run 3dmcap is using our *Docker image*, `thsant/3dmcap`__. If you
 have Docker running in a Ubuntu Linux host and a camera connected as ``/dev/video0``,  the following command
-should install and run 3-Demeter Capture for you:
+should install and run 3dmcap for you:
 
 __ https://cloud.docker.com/swarm/thsant/repository/docker/thsant/3dmcap/general. 
 
@@ -105,9 +105,9 @@ The Python components depend on:
 * mayavi
 * PyYAML
 
-3-Demeter Capture have beend tested in **Ubuntu 16.04** and **16.10**.
+3dmcap have beend tested in **Ubuntu 16.04** and **16.10**.
 
-Building 3-Demeter Capture from sources
+Building 3dmcap from sources
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For users that prefer build the entire system in their own hosts, this
@@ -202,7 +202,7 @@ Add other 3-Demeter dependencies:
 
     apt-get install -y python-wxgtk3.0 python-vtk python-tk v4l-utils 
 
-Finally, get 3-Demeter Capture code:
+Finally, get 3dmcap code:
 
 ::
 
@@ -221,17 +221,17 @@ Configure the environment:
     cp ./dmcap/camcal.py ./dmcap/capture.py /usr/local/bin  
 
 Edit the **3dmcap.cfg** file and save it to your ``$HOME/.3dmcap``
-directory. You can run **capture.py** to start 3-Demeter Capture.
+directory. You can run **capture.py** to start 3dmcap.
 
 Before starting image acquisition
 ---------------------------------
 
-Before using 3-Demeter Capture for your image-based reconstruction, you must complete a few
+Before using 3dmcap for your image-based reconstruction, you must complete a few
 preliminary steps:
 
   1. Pick a USB camera supported by Video4Linux.
   #. Disable camera autofocus functionality, if it is present.
-  #. Calibrate the camera - you can use our `camcal.py` utility, included in 3-Demeter Capture distribution.
+  #. Calibrate the camera - you can use our `camcal.py` utility, included in 3dmcap distribution.
   #. Print the *scaling pattern*, if you wish that 3-Demeter to transform your point cloud to a desired reference (millimeters or inches, for example).
   #. Edit your *configuration file*.
 
@@ -246,7 +246,7 @@ other devices should also work.
 __ https://www.logitech.com/pt-br/product/hd-pro-webcam-c920 
 
 After connecting your camera, you should *set the focus to infinity* and *turn autofocus off*. Changing focus turn the visual odometry
-(the estimation of the camera location) a lot harder and the ORB-SLAM2 system (the visual odometry system used by 3-Demeter Capture)
+(the estimation of the camera location) a lot harder and the ORB-SLAM2 system (the visual odometry system used by 3dmcap)
 will not work properly. You can use the ``v4l2-ctl`` tool accomplish this step at the Linux shell:
 
 ::
@@ -254,7 +254,7 @@ will not work properly. You can use the ``v4l2-ctl`` tool accomplish this step a
  $ v4l2-ctl -d /dev/video1 -c focus_auto=0
  $ v4l2-ctl -d /dev/video1 -c focus_absolute=0
 
-The example above assumes your USB camera is connected as ``/dev/video1``. After that, you can use the utility ``camcal.py``, included in the 3-Demeter Capture software, to calibrate the camera. If 1920x1080 is the maximum resolution your camera is able to support, you should run ``camcal.py`` as the following:
+The example above assumes your USB camera is connected as ``/dev/video1``. After that, you can use the utility ``camcal.py``, included in the 3dmcap software, to calibrate the camera. If 1920x1080 is the maximum resolution your camera is able to support, you should run ``camcal.py`` as the following:
 
 ::
 
@@ -280,7 +280,7 @@ Take a dozen images or more, then click the *Calibrate* button. Then, save the v
 Printing the scaling pattern
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The *scaling pattern* (available in the `resources directory`) is a sheet containing easily detectable markers presenting a known size. It should be printed and then *laminated*, forming a rigid planar tablet. 3-Demeter Capture will use this pattern to scale the point cloud to a proper measurement unit and also rotate the cloud to a standard orientation. If you put the scaling pattern in the ground, 3-Demeter can give you a oriented model where the Z axis points upward. 
+The *scaling pattern* (available in the `resources directory`) is a sheet containing easily detectable markers presenting a known size. It should be printed and then *laminated*, forming a rigid planar tablet. 3dmcap will use this pattern to scale the point cloud to a proper measurement unit and also rotate the cloud to a standard orientation. If you put the scaling pattern in the ground, 3-Demeter can give you a oriented model where the Z axis points upward. 
 
 .. figure:: ./figures/board.png
    :alt: A laminated sheet containing the scaling pattern.
@@ -347,7 +347,7 @@ Note the command line above uses:
 You can change the host working directory or the host configuration directory to values that make more sense to your personal work flow. 
   
   .. figure:: ./figures/3dmcap_initscreen.png
-   :alt: 3-Demeter Capture initial screen.
+   :alt: 3dmcap initial screen.
 
 The first step is to use the *Settings* menu to select the camera to be employed:
 	

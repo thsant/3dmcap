@@ -1,10 +1,10 @@
-# 3-Demeter Capture
+# 3dmcap
 
 ![3-Demeter Logo](https://github.com/thsant/3dmcap/blob/master/resources/3demeter_banner.jpg "3-Demeter Logo")
 
 **Author:** [Thiago T. Santos](https://www.embrapa.br/en/web/portal/team/-/empregado/351534/thiago-teixeira-santos), [Embrapa Agricultural Informatics](https://www.embrapa.br/en/informatica-agropecuaria)
 
-**3-Demeter Capture** is an application for three-dimensional
+**3dmcap** is an application for three-dimensional
   reconstruction of objects from digital images. It allows an ordinary
   camera and a computer to operate as **a simple 3-D scanner**. The
   application assists the user on imaging and computing a cloud of
@@ -25,13 +25,13 @@ Unicamp. [PDF](http://ainfo.cnptia.embrapa.br/digital/bitstream/item/169609/1/Au
 
 ## License
 
-3-Demeter Capture is released under a [GPLv3 license](https://github.com/thsant/3dmcap/blob/master/LICENSE). This software relies on
+3dmcap is released under a [GPLv3 license](https://github.com/thsant/3dmcap/blob/master/LICENSE). This software relies on
 other open-source components as [PMVS](https://www.di.ens.fr/pmvs/), [ORB_SLAM2](https://github.com/raulmur/ORB_SLAM2), [g2o](https://github.com/RainerKuemmerle/g2o) and  [OpenCV](https://opencv.org/).
 
-If you need 3-Demeter Capture for commercial purposes, please contact Embrapa Agricultural Informatics
+If you need 3dmcap for commercial purposes, please contact Embrapa Agricultural Informatics
 [Technology Transfer Office](https://www.embrapa.br/en/informatica-agropecuaria/transferencia-de-tecnologia).
 
-If you use 3-Demeter Capture in an academic work, please cite:
+If you use 3dmcap in an academic work, please cite:
 
 ```
 @inproceedings{Santos2017,
@@ -49,8 +49,8 @@ If you use 3-Demeter Capture in an academic work, please cite:
 
 # Running using Docker
 
-The easiest way to install and run 3-Demeter Capture is using our **Docker image**, [thsant/3dmcap](https://cloud.docker.com/swarm/thsant/repository/docker/thsant/3dmcap/general). If you
-have Docker running in a Ubuntu Linux host and a camera connected as `/dev/video0`,  the following command should install and run 3-Demeter Capture for you:
+The easiest way to install and run 3dmcap is using our **Docker image**, [thsant/3dmcap](https://cloud.docker.com/swarm/thsant/repository/docker/thsant/3dmcap/general). If you
+have Docker running in a Ubuntu Linux host and a camera connected as `/dev/video0`,  the following command should install and run 3dmcap for you:
 
 ```
 docker run -it --rm -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix --device /dev/video0 -v $HOME/.3dmcap:/home/demeter/.3dmcap -v $HOME/workdir:/home/demeter/workdir thsant/3dmcap capture.py
@@ -106,9 +106,9 @@ The Python components depends on:
 * mayavi
 * PyYAML
 
-3-Demeter Capture have beend tested in **Ubuntu 16.04** and **16.10**.
+3dmcap have beend tested in **Ubuntu 16.04** and **16.10**.
 
-## Building 3-Demeter Capture
+## Building 3dmcap
 
 For users that prefer build the entire system in their own hosts, this section describes the detailed building process. We
 assume `/usr/local` as the install directory.
@@ -197,7 +197,7 @@ Add other 3-Demeter dependencies:
 apt-get install -y python-wxgtk3.0 python-vtk python-tk v4l-utils 
 ```
 
-Finally, get 3-Demeter Capture code:
+Finally, get 3dmcap code:
 
 ```
 cd /usr/local/src 
@@ -215,7 +215,7 @@ cp -r ./resources/* /usr/local/share/3dmcap
 cp ./dmcap/camcal.py ./dmcap/capture.py /usr/local/bin  
 ```
 
-Edit the **3dmcap.cfg** file and save it to your `$HOME/.3dmcap` directory. You can run **capture.py** to start 3-Demeter Capture.  
+Edit the **3dmcap.cfg** file and save it to your `$HOME/.3dmcap` directory. You can run **capture.py** to start 3dmcap.  
 
 ## Manual
 
