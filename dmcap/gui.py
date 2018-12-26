@@ -65,7 +65,7 @@ class MayaviUpdater(Thread):
     def run(self):
         while self.updating:
             wx.CallAfter(self.gui.update3DViewer)
-            time.sleep(0.02)
+            time.sleep(0.5)
 
 
 class PCapMainFrame(wx.Frame):
